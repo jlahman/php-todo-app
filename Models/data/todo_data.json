@@ -1,15 +1,15 @@
 {
     "test_list": {
         "Link": {
+            "completed": true
+        },
+        "Zelda": {
             "completed": false
         },
         "Lio Fotia": {
-            "completed": true
-        },
-        "ASDF ASDF ": {
             "completed": false
         },
-        "jiaflsdfja": {
+        "Astolfo": {
             "completed": false
         }
     }

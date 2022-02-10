@@ -34,6 +34,22 @@ class MainModel {
 		$this->updateList($list_name, $list);
 	}
 
+	public function changeItemName ($list_name, $old_item_name, $new_item_name) {
+		$list = $this->getListByName($list_name);
+		$index = array_search($old_item_name , array_keys($list));
+		if($index === false) {
+			return;
+		}
+		#$this->addItemToList($list_name, $new_item_name);
+		$new_entry = array($new_item_name => ['completed' => $list[$old_item_name]['completed']]);
+		$before = array_slice ($list, 0, $index, true);
+		$after = array_slice ($list, $index + 1, null, true);
+		$list = $before + $new_entry + $after;
+		#array_splice ($list, $index, 0, $new_entry);
+		#array_merge ($list, $index, 0, $new_entry);
+		$this->updateList($list_name, $list);
+	}
+
 	private function updateList($list_name, $list) {
 		$todo_data = json_decode(file_get_contents($this->saveFile), true);
 		$todo_data[$list_name] = $list;
