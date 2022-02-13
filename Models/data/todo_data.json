@@ -1,15 +1,29 @@
 {
     "test_list": {
-        "Link": {
-            "completed": true
+        "Link ": {
+            "completed": false
         },
-        "Zelda": {
+        "Zelda ": {
             "completed": false
         },
         "Lio Fotia": {
             "completed": false
         },
         "Astolfo": {
+            "completed": false
+        }
+    },
+    "DailyTodo": {
+        "Brush Teeth ": {
+            "completed": false
+        },
+        "Shower": {
+            "completed": true
+        },
+        "Run ": {
+            "completed": false
+        },
+        "Design FourK App Icon": {
             "completed": false
         }
     }

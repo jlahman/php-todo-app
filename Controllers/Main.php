@@ -8,8 +8,19 @@ class MainController {
 		$this->model = new MainModel ();
 	}
 
-	public function getTaskList () {
+	public function createNewTodo () {
 		$list_name = $_POST['list-name'];
+		$this->model->createNewTodo($list_name);
+		$this->showTaskView ($list_name);
+	}
+
+	public function getTaskList () {
+		$list_name = $_POST['todo-list'];
+		if(!$list_name) {
+			echo var_dump($_POST);
+			include '../Views/default.php';
+			return;
+		}
 		$this->showTaskView ($list_name);
 	}
 
@@ -31,6 +42,10 @@ class MainController {
 	public function addTaskItem () {
 		$list_name = $_POST['list-name'];
 		$item_name = $_POST['item-name'];
+		if(!$item_name) {
+			include '../Views/default.php';
+			return;
+		}
 		$this->model->addItemToList($list_name, $item_name);
 		$this->showTaskView ($list_name);
 	}

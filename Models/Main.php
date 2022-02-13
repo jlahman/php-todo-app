@@ -16,6 +16,10 @@ class MainModel {
 		return $list;
 	}
 
+	public function createNewTodo ($list_name) {
+		getListByName($list_name);
+	}
+
 	public function setItemStatus($list_name, $item_name, $item_value) {
 		$list = $this->getListByName($list_name);
 		$list[$item_name]['completed'] = $item_value == "true" ? true : false;
