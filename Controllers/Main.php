@@ -24,6 +24,11 @@ class MainController {
 		$this->showTaskView ($list_name);
 	}
 
+	public function getTodoBook () {
+		$todo_names = $this->model->getTodoNames();
+		$this->showDefaultView($todo_names);
+	}
+
 	public function changeTaskItemStatus () {
 		$list_name = $_POST['list-name'];
 		$item_name = $_POST['item-name'];
@@ -68,6 +73,10 @@ class MainController {
 	private function showTaskView ($list_name, $edit_item_name = null) {
 		$task_list = $this->model->getListByName ($list_name);
 		include '../Views/TaskList.php';
+	}
+
+	private function showDefaultView ($todo_names) {
+		include '../Views/default.php';
 	}
 
 }

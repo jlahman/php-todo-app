@@ -23,7 +23,7 @@
 			$Controller->changeTaskItemStatus ();
 			break;
 		default:
-			include '../Views/default.php';
+			$Controller->getTodoBook ();
 			break;
 	}
 ?>

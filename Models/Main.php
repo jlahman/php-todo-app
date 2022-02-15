@@ -16,6 +16,12 @@ class MainModel {
 		return $list;
 	}
 
+	public function getTodoNames() {
+		$todo_data = json_decode(file_get_contents($this->saveFile), true);
+		$names = array_keys($todo_data);
+		return $names;
+	}
+
 	public function createNewTodo ($list_name) {
 		getListByName($list_name);
 	}
