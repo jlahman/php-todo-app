@@ -16,5 +16,6 @@ include 'Partials/header.php';
 	</form>
 </div>
 <?php
+include 'Partials/todo_nav.php';
 include 'Partials/footer.php';
 ?>
