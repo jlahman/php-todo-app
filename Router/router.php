@@ -4,6 +4,9 @@
 	$param = $_REQUEST['action'];
 
 	switch ($param) {
+		case 'add-todo-list':
+			$Controller->createNewTodo ();
+			break;
 		case 'get-task-list':
 			$Controller->getTaskList();
 			break;
@@ -23,7 +26,7 @@
 			$Controller->changeTaskItemStatus ();
 			break;
 		default:
-			include '../Views/default.php';
+			$Controller->getTodoBook ();
 			break;
 	}
 ?>

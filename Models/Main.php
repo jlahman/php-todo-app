@@ -16,8 +16,19 @@ class MainModel {
 		return $list;
 	}
 
+	public function getTodoNames() {
+		$todo_data = json_decode(file_get_contents($this->saveFile), true);
+		$names = array_keys($todo_data);
+		return $names;
+	}
+
 	public function createNewTodo ($list_name) {
-		getListByName($list_name);
+		$todo_data = json_decode(file_get_contents($this->saveFile), true);
+		if($todo_data[$list_name]) {
+			$list_name = $list_name . ' copy';
+		}
+		$todo_data[$list_name] = ["Item" => ['completed' => false]];
+		file_put_contents ($this->saveFile, json_encode($todo_data, JSON_PRETTY_PRINT));
 	}
 
 	public function setItemStatus($list_name, $item_name, $item_value) {
@@ -44,13 +55,10 @@ class MainModel {
 		if($index === false) {
 			return;
 		}
-		#$this->addItemToList($list_name, $new_item_name);
 		$new_entry = array($new_item_name => ['completed' => $list[$old_item_name]['completed']]);
 		$before = array_slice ($list, 0, $index, true);
 		$after = array_slice ($list, $index + 1, null, true);
 		$list = $before + $new_entry + $after;
-		#array_splice ($list, $index, 0, $new_entry);
-		#array_merge ($list, $index, 0, $new_entry);
 		$this->updateList($list_name, $list);
 	}
 
