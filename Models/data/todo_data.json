@@ -1,29 +1,35 @@
 {
     "test_list": {
-        "Link ": {
+        "Hello  ": {
             "completed": false
         },
-        "Zelda ": {
+        "world  ": {
             "completed": false
         },
-        "Lio Fotia ": {
+        "This": {
             "completed": false
         },
-        "Astolfo": {
+        "is ": {
+            "completed": false
+        },
+        "a": {
+            "completed": false
+        },
+        "todo": {
+            "completed": false
+        },
+        "app!!": {
             "completed": false
         }
     },
-    "DailyTodo": {
-        "Brush Teeth ": {
+    "DailyTodo": [],
+    "New List": {
+        "Item": {
             "completed": false
-        },
-        "Shower": {
-            "completed": true
-        },
-        "Run ": {
-            "completed": false
-        },
-        "Design FourK App Icon": {
+        }
+    },
+    "New List copy": {
+        "Item": {
             "completed": false
         }
     }

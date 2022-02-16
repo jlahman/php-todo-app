@@ -71,8 +71,13 @@ class MainController {
 	}
 
 	private function showTaskView ($list_name, $edit_item_name = null) {
+		$todo_names = $this->model->getTodoNames();
+		if ($list_name == null) {
+
+		}
+
 		$task_list = $this->model->getListByName ($list_name);
-		include '../Views/TaskList.php';
+		include '../Views/default.php';
 	}
 
 	private function showDefaultView ($todo_names) {
