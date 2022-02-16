@@ -19,8 +19,14 @@
 		case 'edit-item':
 			$Controller->editTaskItem ();
 			break;
+		case 'edit-task-list':
+			$Controller->editTaskList ();
+			break;
 		case 'change-item-name':
 			$Controller->changeTaskItemName ();
+			break;
+		case 'change-list-name':
+			$Controller->changeTaskListName ();
 			break;
 		case 'set-item-status':
 			$Controller->changeTaskItemStatus ();

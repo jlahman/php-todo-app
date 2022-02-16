@@ -6,10 +6,7 @@
         "world  ": {
             "completed": false
         },
-        "This": {
-            "completed": false
-        },
-        "is ": {
+        "This ": {
             "completed": false
         },
         "a": {
@@ -22,13 +19,25 @@
             "completed": false
         }
     },
-    "DailyTodo": [],
-    "New List": {
+    "Todo D": {
         "Item": {
             "completed": false
         }
     },
-    "New List copy": {
+    "Todo A": {
+        "Item": {
+            "completed": false
+        },
+        "f": {
+            "completed": false
+        }
+    },
+    "Todo C": {
+        "Item": {
+            "completed": false
+        }
+    },
+    "Todo B": {
         "Item": {
             "completed": false
         }
