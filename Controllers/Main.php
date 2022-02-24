@@ -63,14 +63,28 @@ class MainController {
 		$this->showTaskView ($list_name);
 	}
 
+	public function changeTaskListName () {
+		$old_list_name = $_POST['old-list-name'];
+		$new_list_name = $_POST['new-list-name'];
+		$list_name = $new_list_name;
+
+		$this->model->changeListName($list_name, $old_list_name, $new_list_name);
+		$this->showTaskView ($list_name);
+	}
+
 	public function editTaskItem () {
 		$list_name = $_POST['list-name'];
 		$edit_item_name = $_POST['item-name'];
-		#echo var_dump($edit_item_name);
 		$this->showTaskView ($list_name, $edit_item_name);
 	}
 
-	private function showTaskView ($list_name, $edit_item_name = null) {
+	public function editTaskList () {
+		$list_name = $_POST['list-name'];
+		$todo_edit_name = $_POST['list-name'];
+		$this->showTaskView ($list_name, null, $todo_edit_name);
+	}
+
+	private function showTaskView ($list_name, $edit_item_name = null, $todo_edit_name = null) {
 		$todo_names = $this->model->getTodoNames();
 		if ($list_name == null) {
 

@@ -62,6 +62,20 @@ class MainModel {
 		$this->updateList($list_name, $list);
 	}
 
+	public function changeListName ($list_name, $old_list_name, $new_list_name) {
+		$todo_data = json_decode(file_get_contents($this->saveFile), true);
+		$list = $this->getListByName($old_list_name);
+		$index = array_search($old_list_name , array_keys($todo_data));
+		if($index === false) {
+			return;
+		}
+		$new_entry = array($new_list_name => $list);
+		$before = array_slice ($todo_data, 0, $index, true);
+		$after = array_slice ($todo_data, $index + 1, null, true);
+		$todo_data = $before + $new_entry + $after;
+		file_put_contents ($this->saveFile, json_encode($todo_data, JSON_PRETTY_PRINT));
+	}
+
 	private function updateList($list_name, $list) {
 		$todo_data = json_decode(file_get_contents($this->saveFile), true);
 		$todo_data[$list_name] = $list;
