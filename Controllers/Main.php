@@ -44,6 +44,12 @@ class MainController {
 		$this->showTaskView ($list_name);
 	}
 
+	public function removeTaskList () {
+		$list_name = $_POST['list-name'];
+		$this->model->removeListFromBook($list_name);
+		$this->getTodoBook();
+	}
+
 	public function addTaskItem () {
 		$list_name = $_POST['list-name'];
 		$item_name = $_POST['item-name'];

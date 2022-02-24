@@ -49,6 +49,11 @@
 							</form>
 						</div>
 					<?php } ?>
+					<form action=""  method="POST" style="align-self:center">
+						<input type="hidden" name="action" value="remove-list">
+						<input type="hidden" name="list-name" value="<?php echo $todo_name?>">
+						<button>Delete</button>
+					</form>
 
 				</div>
 

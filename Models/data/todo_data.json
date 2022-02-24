@@ -28,17 +28,7 @@
         "Item": {
             "completed": false
         },
-        "f": {
-            "completed": false
-        }
-    },
-    "Todo C": {
-        "Item": {
-            "completed": false
-        }
-    },
-    "Todo B": {
-        "Item": {
+        "asdf": {
             "completed": false
         }
     }

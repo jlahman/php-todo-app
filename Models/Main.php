@@ -43,6 +43,12 @@ class MainModel {
 		$this->updateList($list_name, $list);
 	}
 
+	public function removeListFromBook($list_name) {
+		$todo_data = json_decode(file_get_contents($this->saveFile), true);
+		unset($todo_data[$list_name]);
+		file_put_contents ($this->saveFile, json_encode($todo_data, JSON_PRETTY_PRINT));
+	}
+
 	public function addItemToList($list_name, $item_name) {
 		$list = $this->getListByName($list_name);
 		$list[$item_name] = ['completed' => false];

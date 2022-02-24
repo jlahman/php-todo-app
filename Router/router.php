@@ -16,6 +16,9 @@
 		case 'remove-item':
 			$Controller->removeTaskItem ();
 			break;
+		case 'remove-list':
+			$Controller->removeTaskList ();
+			break;
 		case 'edit-item':
 			$Controller->editTaskItem ();
 			break;
