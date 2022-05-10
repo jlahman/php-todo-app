@@ -1,34 +1,23 @@
 {
-    "test_list": {
-        "Hello  ": {
+    "Groceries": {
+        "Milk ": {
+            "completed": true
+        },
+        "Orzo": {
             "completed": false
         },
-        "world  ": {
-            "completed": false
+        "Tortillas": {
+            "completed": true
         },
-        "This ": {
-            "completed": false
-        },
-        "a": {
-            "completed": false
-        },
-        "todo": {
-            "completed": false
-        },
-        "app!!": {
+        "Shredded Cheese": {
             "completed": false
         }
     },
-    "Todo D": {
-        "Item": {
-            "completed": false
-        }
-    },
-    "Todo A": {
-        "Item": {
+    "Errands": {
+        "Groceries ": {
             "completed": false
         },
-        "asdf": {
+        "Laundery": {
             "completed": false
         }
     }
